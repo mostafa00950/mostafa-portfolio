@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mostafa Mohamed | Penetration Tester</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Rajdhani:wght@400;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Background FX -->
+  <div class="bg-grid"></div>
+  <div class="scanlines"></div>
+  <canvas id="cyber-canvas" aria-hidden="true"></canvas>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-inner">
+
+      <div class="profile-wrap">
+        <div class="profile-ring"></div>
+        <img src="profile.jpg" alt="Mostafa Mohamed" class="profile-img">
+        <div class="status-dot"></div>
+      </div>
+
+      <div class="profile-info">
+        <div class="terminal-label">// IDENTITY</div>
+        <h1 class="name">Mostafa Mohamed  Abdelshafy</h1>
+        <p class="full-name">Mostafa Mohamed Abdelshafy</p>
+
+        <p class="role"><span class="bracket">[</span> Junior Penetration Tester <span class="bracket">]</span></p>
+        <p class="identity-focus">Web Application Security <span>•</span> Network Security <span>•</span> Bug Hunter</p>
+      </div>
+
+      <nav class="nav">
+        <a href="#home"     class="nav-link" data-index="00">Home</a>
+        <a href="#about"    class="nav-link" data-index="01">About</a>
+        <a href="#skills"   class="nav-link" data-index="02">Skills</a>
+        <a href="#projects" class="nav-link" data-index="03">Projects</a>
+        <a href="#certifications" class="nav-link" data-index="04">Certifications</a>
+      
+        <a href="#contact"  class="nav-link" data-index="05">Contact</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sys-info">
+          <span class="sys-label">SYS</span>
+          <span class="sys-status" id="sys-status">ONLINE</span>
+        </div>
+        <div class="uptime" id="uptime">00:00:00</div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- Hamburger (mobile) -->
+  <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Hero -->
+    <section id="home" class="section hero-section">
+      <div class="hero-copy">
+        <div class="hero-tag"><span class="signal-dot"></span> target_profile // 00</div>
+        <h2 class="hero-title">
+          <span class="line">Hello, I'm</span>
+          <span class="line accent" id="typed-name"></span>
+        </h2>
+        <p class="hero-sub" id="typed-role"></p>
+      <!-- <p class="hero-focus">Web Application Security <span>•</span> Network Security <span>•</span> Bug Hunter <span>•</span> Malware Analysis Enthusiast</p> -->
+        <div class="hero-specialties">
+          <span>Web Application Security</span>
+          <span>Penetration Testing</span>
+          <span>Network Security</span>
+          <span>Bug Hunting</span>
+          <span>Malware Analysis</span>
+          <span>Cybersecurity Student</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary"><span class="btn-icon">&#9654;</span> View Projects</a>
+          <a href="#contact" class="btn btn-contact"><span class="btn-icon">&#9993;</span> Contact Me</a>
+          <a href="./Mostafa-CV.pdf" download="Mostafa-Mohamed-Elsayed-Abdelshafy-CV.pdf" class="btn btn-cv"><span class="btn-icon">&#8595;</span> Download CV</a>
+          <a href="./Mostafa-CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-preview"><span class="btn-icon">&#8599;</span> Preview Resume</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">Cybersecurity Enthusiast </span><span class="stat-label">Security-Focused Learning</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">TryHackMe & HackTheBox & portswigger</span><span class="stat-label">Active Practice</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">Web Security</span><span class="stat-label">Hands-on Labs</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" id="hero-visual">
+        <div class="hero-frame-corner corner-tl"></div><div class="hero-frame-corner corner-br"></div>
+        <div class="hero-image-wrap" id="hero-image-wrap">
+          <img src="profile.jpg" alt="Mostafa Mohamed" class="hero-image">
+          <div class="image-scan"></div>
+          <div class="reticle" id="reticle"><span></span></div>
+        </div>
+        <div class="hud-label hud-top">VISUAL_ID <strong>MM-01</strong></div>
+        <div class="hud-label hud-bottom"><span class="hud-live"></span> FEED // STABLE</div>
+        <div class="hud-coordinates">30.0444 N<br>31.2357 E</div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section about-section reveal">
+      <div class="section-header">
+        <span class="section-tag">// about_me.txt</span>
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+         <p>
+  <strong>
+    I’m a Computer Science professional with a hands-on focus on cybersecurity,
+    web application security, and penetration testing. I build my practical
+    experience through
+    <span class="highlight">TryHackMe</span>,
+    <span class="highlight">PortSwigger Web Security Academy</span>, and
+    <span class="highlight">Hack The Box</span> labs.
+    My focus areas include web security, network security, vulnerability
+    assessment, bug hunting, and malware analysis fundamentals.
+  </strong>
+</p>
+        </div>
+        <div class="about-terminal">
+          <div class="terminal-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title">whoami.sh</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="t-prompt">$</span> whoami</p>
+            <p class="t-out">mostafa_mohamed</p>
+            <p><span class="t-prompt">$</span> cat focus.txt</p>
+            <p class="t-out">Junior Penetration Tester</p>
+            <p class="t-out">Web Application Security</p>
+            <p class="t-out">Malware Analysis Enthusiast</p>
+            <p class="t-out">Fourth-Year CS Student</p>
+            <p><span class="t-prompt">$</span> echo $STATUS</p>
+            <p class="t-out t-green">ACTIVELY LEARNING<span class="cursor-blink">_</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section skills-section reveal">
+      <div class="section-header">
+        <span class="section-tag">// skills.json</span>
+        <h2 class="section-title">Skills</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skill-groups">
+        <article class="skill-group"><h3>01 // Application Security</h3><div class="skill-chips"><span>Web Application Security</span><span>OWASP Top 10</span><span>Vulnerability Assessment</span><span>Manual Security Testing</span><span>Burp Suite</span><span>HTTP / Web Security</span><span>Authentication &amp; Authorization</span><span>Access Control</span><span>Input Validation</span><span>API Security</span><span>Session Security</span><span>JWT Security</span><span>SSRF</span><span>XXE</span><span>XSS</span><span>SQL Injection</span><span>CSRF</span><span>File Upload Security</span><span>Server-Side Parameter Pollution</span><span>GraphQL Security</span></div></article>
+        <article class="skill-group"><h3>02 // Penetration Testing</h3><div class="skill-chips"><span>Web Application Penetration Testing</span><span>Network Penetration Testing</span><span>Reconnaissance</span><span>Enumeration</span><span>Vulnerability Assessment</span><span>Metasploit</span><span>Nmap</span><span>Nessus</span><span>Nikto</span><span>FFUF</span><span>Gobuster</span><span>Hydra</span></div></article>
+        <article class="skill-group"><h3>03 // Reconnaissance &amp; Enumeration</h3><div class="skill-chips"><span>Nmap</span><span>Subfinder</span><span>Amass</span><span>theHarvester</span><span>Recon-ng</span><span>Gobuster</span><span>FFUF</span><span>DNS Enumeration</span><span>Subdomain Enumeration</span><span>Service Enumeration</span></div></article>
+        <article class="skill-group"><h3>04 // Network Security</h3><div class="skill-chips"><span>Network Security</span><span>Packet Analysis</span><span>Wireshark</span><span>TCP/IP</span><span>Ethernet</span><span>IPv4</span><span>TCP</span><span>UDP</span><span>ICMP</span><span>Network Traffic Analysis</span><span>Raw Sockets</span></div></article>
+        <article class="skill-group"><h3>05 // Active Directory / Windows Security</h3><div class="skill-chips"><span>Active Directory Fundamentals</span><span>LDAP</span><span>Kerberos</span><span>SMB</span><span>Windows Security</span><span>Domain Enumeration</span><span>Privilege Escalation Fundamentals</span><em>Currently Studying</em></div></article>
+        <article class="skill-group"><h3>06 // Malware Analysis</h3><div class="skill-chips"><span>Malware Analysis</span><span>Static Analysis</span><span>Dynamic Analysis</span><span>Reverse Engineering Fundamentals</span><span>Practical Malware Analysis</span><span>Windows Malware Analysis</span><span>Indicators of Compromise</span><em>Currently Studying</em></div></article>
+        <article class="skill-group"><h3>07 // LLM &amp; AI Security</h3><div class="skill-chips"><span>LLM Security</span><span>OWASP Top 10 for LLMs</span><span>Prompt Injection</span><span>Indirect Prompt Injection</span><span>Jailbreak Attacks</span><span>MCP Security</span><span>AI Agents Security</span><span>AI Agent Orchestration</span><span>Command Injection</span><span>Data Exfiltration</span><span>OAuth Token Theft</span><span>Privilege Escalation in AI Systems</span><span>AI Governance &amp; Risk Management</span><span>AI Application Security</span><span>Secure AI-Assisted Development</span></div><p class="skill-note">Certified LLM Security Professional (CLLMSP) <span>•</span> October Agent Security Challenge — 5/5 Levels Completed</p></article>
+        <article class="skill-group"><h3>08 // Programming &amp; Development</h3><div class="skill-chips"><span>C++</span><span>C#</span><span>Python</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Node.js</span><span>ASP.NET Core</span><span>PHP <small>Currently Learning</small></span><span>SQL</span><span>MongoDB</span><span>Microsoft SQL Server</span><span>Entity Framework Core</span><span>Razor</span><span>Bootstrap</span><span>Git</span><span>GitHub</span></div></article>
+        <article class="skill-group"><h3>09 // Operating Systems</h3><div class="skill-chips"><span>Linux</span><span>Kali Linux</span><span>Windows</span><span>Basic Linux Administration</span><span>Red Hat System Administration</span></div></article>
+      </div>
+      <div class="learning-panel">
+        <span class="section-tag">// learning_log.txt</span>
+        <h3>Certifications &amp; Learning</h3>
+        <div class="learning-list"><span>Certified Cybersecurity Educator Professional (CCEP)</span><span>Jr Penetration Tester Learning Path — TryHackMe</span><span>CLLMSP</span><span>Advanced &amp; Basic Malware Analysis and Reverse Engineering</span><span>Red Hat System Administration I</span><span>eWPT Training</span><span>Network Traffic Analysis</span><span class="studying">eWPTX Preparation — Currently Studying</span></div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section projects-section reveal">
+      <div class="section-header">
+        <span class="section-tag">// projects.db</span>
+        <h2 class="section-title">Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+
+        <article class="project-card case-study-card" data-project="weather-pipeline">
+          <div class="project-visual project-image-wrap"><img src="./weather.png" alt="Weather Pipeline project screenshot"><span class="image-label">DATA ENGINEERING</span></div>
+          <div class="card-header"><span class="card-num">01</span><span class="project-category">DATA ENGINEERING</span></div>
+          <h3 class="card-title">Weather Pipeline</h3>
+          <p class="card-desc">An automated ML pipeline that fetches weather data, processes it with Apache Airflow, stores it in PostgreSQL, and runs XGBoost predictions.</p>
+          <div class="card-tags"><span class="tag">Apache Airflow</span><span class="tag">XGBoost</span><span class="tag">PostgreSQL</span><span class="tag">Python</span><span class="tag">Machine Learning</span></div>
+          <div class="card-footer"><span class="card-status online">● Active</span><button class="details-btn" type="button">View Project <span>&rarr;</span></button></div>
+        </article>
+
+        <article class="project-card case-study-card" data-project="network-sniffer">
+          <div class="project-visual project-image-wrap"><img src="./network%20sniffer.png" alt="Network Sniffer project screenshot"><span class="image-label">NETWORK SECURITY</span></div>
+          <div class="card-header"><span class="card-num">02</span><span class="project-category">CYBERSECURITY / NETWORK SECURITY</span></div>
+          <h3 class="card-title">Network Sniffer</h3>
+          <p class="card-desc">Captures and analyzes raw network packets, extracting IP addresses, MAC addresses, protocol types, and payload data in real time.</p>
+          <div class="card-tags"><span class="tag">Python</span><span class="tag">Networking</span><span class="tag">Packet Analysis</span></div>
+          <div class="card-footer"><span class="card-status online">● Active</span><a class="details-btn project-link" href="https://github.com/mostafa00950/CodeAlpha_BasicNetworkSniffer" target="_blank" rel="noopener noreferrer">View Project <span>&#8599;</span></a></div>
+        </article>
+
+        <article class="project-card case-study-card" data-project="restaurant">
+          <div class="project-visual project-image-wrap"><img src="./resturantOrderingSystem.png" alt="Restaurant Ordering System project screenshot"><span class="image-label">SOFTWARE DEVELOPMENT</span></div>
+          <div class="card-header"><span class="card-num">03</span><span class="project-category">SOFTWARE DEVELOPMENT</span></div>
+          <h3 class="card-title">Restaurant Ordering System</h3>
+          <p class="card-desc">A full-stack restaurant management and ordering system built with ASP.NET Core MVC, C#, Entity Framework Core, and SQL Server.</p>
+          <div class="card-tags"><span class="tag">Desktop/Web Application</span><span class="tag">Database</span><span class="tag">CRUD</span></div>
+          <div class="card-footer"><span class="card-status online">● University Project</span><a class="details-btn project-link" href="https://github.com/MuhamedxR/wdt-project" target="_blank" rel="noopener noreferrer">View Project <span>&#8599;</span></a></div>
+        </article>
+
+        <article class="project-card case-study-card" data-project="techcourses">
+          <div class="project-visual project-image-wrap"><img src="./techcourses.png" alt="Tech Courses project screenshot"><span class="image-label">WEB DEVELOPMENT</span></div>
+          <div class="card-header"><span class="card-num">04</span><span class="project-category">WEB DEVELOPMENT</span></div>
+          <h3 class="card-title">Tech Courses</h3>
+          <p class="card-desc">A full-stack platform for discovering technical tracks, roadmaps, books, academies, and external learning resources.</p>
+          <div class="card-tags"><span class="tag">Full-Stack Development</span><span class="tag">Database</span><span class="tag">REST APIs</span></div>
+          <div class="card-footer"><span class="card-status online">● Full-Stack Project</span><button class="details-btn" type="button">View Project <span>&rarr;</span></button></div>
+        </article>
+
+        <article class="project-card case-study-card" data-project="workfiy">
+          <div class="project-visual project-image-wrap"><img src="./workfy.png" alt="Workfiy project screenshot"><span class="image-label">APPLICATION SECURITY</span></div>
+          <div class="card-header"><span class="card-num">05</span><span class="project-category">FULL-STACK WEB DEVELOPMENT / APPLICATION SECURITY</span></div>
+          <h3 class="card-title">Workfiy</h3>
+          <p class="card-desc">A full-stack platform for discovering and managing jobs, internships, and scholarship opportunities through one organized interface.</p>
+          <div class="card-tags"><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">JavaScript</span><span class="tag">MongoDB</span><span class="tag">REST APIs</span><span class="tag">Git</span><span class="tag">GitHub</span></div>
+          <div class="card-footer"><span class="card-status online">● Practical Project</span><a class="details-btn project-link" href="https://github.com/mostafa00950/Workfiy" target="_blank" rel="noopener noreferrer">View Project <span>&#8599;</span></a></div>
+        </article>
+
+        <article class="project-card case-study-card" data-project="law-office">
+          <div class="project-visual project-image-wrap"><img src="./lowoffice.png" alt="Law Office System project screenshot"><span class="image-label">SOFTWARE DEVELOPMENT</span></div>
+          <div class="card-header"><span class="card-num">06</span><span class="project-category">SOFTWARE DEVELOPMENT</span></div>
+          <h3 class="card-title">Law Office System</h3>
+          <p class="card-desc">A full-featured desktop application with complete CRUD operations, built on SQL Server for case and client management.</p>
+          <div class="card-tags"><span class="tag">SQL Server</span><span class="tag">Desktop Application</span><span class="tag">CRUD</span><span class="tag">Relational Database</span></div>
+          <div class="card-footer"><span class="card-status done">● Completed</span><button class="details-btn" type="button">View Project <span>&rarr;</span></button></div>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="project-modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-backdrop" data-modal-close></div>
+      <div class="modal-panel">
+        <button class="modal-close" type="button" aria-label="Close project details" data-modal-close>&times;</button>
+        <div class="modal-kicker" id="modal-category">CASE STUDY</div>
+        <h2 id="modal-title">Project Details</h2>
+        <p class="modal-overview" id="modal-overview"></p>
+        <div class="modal-columns">
+          <div><h3>Key Features</h3><ul id="modal-features"></ul></div>
+          <div><h3>My Contribution</h3><ul id="modal-contribution"></ul></div>
+          <div><h3>Technologies</h3><div class="modal-tags" id="modal-technologies"></div></div>
+          <div><h3>Security Context</h3><p id="modal-security"></p></div>
+        </div>
+        <div class="modal-placeholder">PROJECT SCREENSHOTS // NOT AVAILABLE IN CURRENT ASSETS</div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <section id="certifications" class="section certifications-section reveal">
+      <div class="section-header">
+        <span class="section-tag">// certifications.log</span>
+        <h2 class="section-title">Certifications</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="certifications-grid">
+        <article class="certificate-card" data-cert="cllmsp" data-file="assets/certifications/certified_llm_certificate.pdf"><div class="certificate-visual certificate-preview"><canvas class="certificate-pdf-preview" data-pdf="./assets/certifications/certified_llm_certificate.pdf" aria-label="CLLMSP certificate preview"></canvas><span>AI SECURITY</span></div><div class="certificate-body"><span class="certificate-category">AI SECURITY</span><h3>Certified LLM Security Professional (CLLMSP)</h3><p>Red Team Leaders</p><time>Issued: August 28, 2026</time><button class="certificate-button" type="button">Show Certificate</button></div></article>
+        <article class="certificate-card" data-cert="ccep" data-file="assets/certifications/certified_certificate(CCEP).pdf"><div class="certificate-visual certificate-preview"><canvas class="certificate-pdf-preview" data-pdf="./assets/certifications/certified_certificate(CCEP).pdf" aria-label="CCEP certificate preview"></canvas><span>SECURITY EDUCATION</span></div><div class="certificate-body"><span class="certificate-category">SECURITY</span><h3>Certified Cybersecurity Educator Professional (CCEP)</h3><p>Red Team Leaders</p><time>Issued: April 14, 2026</time><button class="certificate-button" type="button">Show Certificate</button></div></article>
+        <article class="certificate-card" data-cert="advanced-malware-analysis" data-file="assets/certifications/Advanced-Malware-Analysis.pdf"><div class="certificate-visual certificate-preview"><canvas class="certificate-pdf-preview" data-pdf="./assets/certifications/Advanced-Malware-Analysis.pdf" aria-label="Advanced Malware Analysis certificate preview"></canvas><span>MALWARE ANALYSIS</span></div><div class="certificate-body"><span class="certificate-category">MALWARE ANALYSIS</span><h3>Advanced Malware Analysis</h3><p>Mahara-Tech</p><time>Completed: April 18, 2026 <b>•</b> 9 Hours</time><button class="certificate-button" type="button">Show Certificate</button></div></article>
+        <article class="certificate-card" data-cert="red-hat-system-administration" data-file="assets/certifications/Red-Hat-System-Administration.pdf"><div class="certificate-visual certificate-preview"><canvas class="certificate-pdf-preview" data-pdf="./assets/certifications/Red-Hat-System-Administration.pdf" aria-label="Red Hat certificate preview"></canvas><span>SYSTEMS</span></div><div class="certificate-body"><span class="certificate-category">SYSTEMS</span><h3>Red Hat System Administration I</h3><p>Mahara-Tech</p><time>Completed: April 13, 2026 <b>•</b> 9 Hours 11 Minutes</time><button class="certificate-button" type="button">Show Certificate</button></div></article>
+        <article class="certificate-card" data-cert="sprints-microsoft-cybersecurity" data-file="assets/certifications/Sprints-Microsoft-Cybersecurity.pdf"><div class="certificate-visual certificate-preview"><canvas class="certificate-pdf-preview" data-pdf="./assets/certifications/Sprints-Microsoft-Cybersecurity.pdf" aria-label="Sprints Microsoft certificate preview"></canvas><span>CYBERSECURITY</span></div><div class="certificate-body"><span class="certificate-category">SECURITY</span><h3>Sprints x Microsoft Summer Camp - Cybersecurity</h3><p>Sprints x Microsoft</p><time>Learning workload: 40 Hours</time><button class="certificate-button" type="button">Show Certificate</button></div></article>
+        <article class="certificate-card" data-cert="jr-penetration-tester" data-file="assets/certifications/TryHackMe-Jr-Penetration-Tester.pdf"><div class="certificate-visual certificate-preview"><canvas class="certificate-pdf-preview" data-pdf="./assets/certifications/TryHackMe-Jr-Penetration-Tester.pdf" aria-label="TryHackMe certificate preview"></canvas><span>OFFENSIVE SECURITY</span></div><div class="certificate-body"><span class="certificate-category">PENETRATION TESTING</span><h3>Jr Penetration Tester Learning Path</h3><p>TryHackMe</p><time>Completed: August 26, 2025 <b>•</b> 30 Hours 40 Minutes</time><button class="certificate-button" type="button">Show Certificate</button></div></article>
+        <article class="certificate-card" data-cert="owasp-top-10" data-file="assets/certifications/OWASP-Top-10.pdf"><div class="certificate-visual certificate-preview"><canvas class="certificate-pdf-preview" data-pdf="./assets/certifications/OWASP-Top-10.pdf" aria-label="OWASP certificate preview"></canvas><span>WEB SECURITY</span></div><div class="certificate-body"><span class="certificate-category">WEB SECURITY</span><h3>OWASP Top 10 (Web) 2021</h3><p>Mahara-Tech</p><time>Completed: July 3, 2025 <b>•</b> 2 Hours 30 Minutes</time><button class="certificate-button" type="button">Show Certificate</button></div></article>
+        <article class="certificate-card" data-cert="aiasec" data-file="assets/certifications/certificate-AIASEC-OCT2025-0052.pdf"><div class="certificate-visual certificate-preview"><canvas class="certificate-pdf-preview" data-pdf="./assets/certifications/certificate-AIASEC-OCT2025-0052.pdf" aria-label="AIASEC certificate preview"></canvas><span>AI SECURITY</span></div><div class="certificate-body"><span class="certificate-category">AI SECURITY</span><h3>AI Security / AIASEC Certificate</h3><p>Certificate issuer information not provided</p><time>Certificate date not provided</time><button class="certificate-button" type="button">Show Certificate</button></div></article>
+        <article class="certificate-card" data-cert="ot-cybersecurity-foundations" data-file="assets/certifications/OT.jpg"><div class="certificate-visual certificate-preview"><img src="./assets/certifications/OT.jpg" alt="OT CyberSecurity Foundations certificate preview"><span>OPERATIONAL TECHNOLOGY</span></div><div class="certificate-body"><span class="certificate-category">SECURITY</span><h3>OT CyberSecurity Foundations</h3><p>NetRiders</p><time>Certificate date not provided</time><button class="certificate-button" type="button">Show Certificate</button></div></article>
+      </div>
+      <p class="certificates-note">Certificate previews use the exact uploaded files from <strong>assets/certifications/</strong>.</p>
+    </section>
+
+    <div class="certificate-modal" id="certificate-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Certificate preview">
+      <div class="certificate-modal-backdrop" data-certificate-close></div>
+      <div class="certificate-modal-panel"><button class="certificate-modal-close" type="button" aria-label="Close certificate preview" data-certificate-close>&times;</button><div id="certificate-modal-content"></div></div>
+    </div>
+
+   
+    <!-- Contact -->
+    <section id="contact" class="section contact-section reveal">
+      <div class="section-header">
+        <span class="section-tag">// contact.cfg</span>
+        <h2 class="section-title">Contact</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-item" onclick="copyToClipboard('abeostafa@gmail.com', this)">
+          <div class="contact-icon">✉</div>
+          <div class="contact-info">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">abeostafa@gmail.com</span>
+          </div>
+          <span class="copy-hint">click to copy</span>
+        </div>
+        <div class="contact-item" onclick="copyToClipboard('+201099492414', this)">
+          <div class="contact-icon">📞</div>
+          <div class="contact-info">
+            <span class="contact-label">Phone</span>
+            <span class="contact-value">+20 109 949 2414</span>
+          </div>
+          <span class="copy-hint">click to copy</span>
+        </div>
+        <a class="contact-item contact-link" href="https://www.linkedin.com/in/mostafaabdalshafy/" target="_blank" rel="noopener noreferrer">
+          <div class="contact-icon">in</div>
+          <div class="contact-info">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">mostafaabdalshafy</span>
+          </div>
+          <span class="copy-hint">open profile &#8599;</span>
+        </a>
+        <a class="contact-item contact-link" href="https://github.com/mostafa00950" target="_blank" rel="noopener noreferrer">
+          <div class="contact-icon">&lt;/&gt;</div>
+          <div class="contact-info">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">mostafa00950</span>
+          </div>
+          <span class="copy-hint">open profile &#8599;</span>
+        </a>
+      </div>
+      <p class="contact-note">// Available for freelance work and collaboration</p>
+    </section>
+
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
