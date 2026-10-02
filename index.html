@@ -38,8 +38,7 @@
         <a href="#about"    class="nav-link" data-index="01">About</a>
         <a href="#skills"   class="nav-link" data-index="02">Skills</a>
         <a href="#projects" class="nav-link" data-index="03">Projects</a>
-        <a href="#certifications" class="nav-link" data-index="04">Certifications</a>
-      
+        <a href="#services" class="nav-link" data-index="04">Services</a>
         <a href="#contact"  class="nav-link" data-index="05">Contact</a>
       </nav>
 
@@ -286,6 +285,33 @@
     </div>
 
    
+    <!-- Services -->
+    <section id="services" class="section services-section reveal">
+      <div class="section-header">
+        <span class="section-tag">// services.cfg</span>
+        <h2 class="section-title">Services</h2>
+        <div class="section-line"></div>
+      </div>
+      <article class="service-card">
+        <div class="card-header"><span class="card-num">01</span><span class="project-category">WEB APPLICATION SECURITY</span></div>
+        <h3 class="card-title">Web Application Penetration Testing</h3>
+        <p class="card-desc">Authorized security testing to identify vulnerabilities and security weaknesses in web applications.</p>
+        <ul class="service-list">
+          <li>Reconnaissance and attack-surface discovery</li>
+          <li>Authentication and authorization testing</li>
+          <li>Input validation testing</li>
+          <li>Common web vulnerabilities testing</li>
+          <li>Session and access-control testing</li>
+          <li>API security testing</li>
+          <li>Business logic testing</li>
+          <li>Security configuration review</li>
+          <li>Vulnerability documentation and reporting</li>
+        </ul>
+        <p class="service-note">Pentesting is performed only with explicit authorization and within an agreed scope.</p>
+        <a class="btn btn-primary service-request" href="#contact" data-pentest-request><span class="btn-icon">&#9654;</span> Request Pentest</a>
+      </article>
+    </section>
+
     <!-- Contact -->
     <section id="contact" class="section contact-section reveal">
       <div class="section-header">
@@ -293,39 +319,113 @@
         <h2 class="section-title">Contact</h2>
         <div class="section-line"></div>
       </div>
-      <div class="contact-grid">
-        <div class="contact-item" onclick="copyToClipboard('abeostafa@gmail.com', this)">
-          <div class="contact-icon">✉</div>
-          <div class="contact-info">
-            <span class="contact-label">Email</span>
-            <span class="contact-value">abeostafa@gmail.com</span>
+      <div class="contact-layout">
+        <div>
+          <div class="contact-grid">
+            <div class="contact-item" onclick="copyToClipboard('abeostafa@gmail.com', this)">
+              <div class="contact-icon">✉</div>
+              <div class="contact-info">
+                <span class="contact-label">Email</span>
+                <span class="contact-value">abeostafa@gmail.com</span>
+              </div>
+              <span class="copy-hint">click to copy</span>
+            </div>
+            <div class="contact-item" onclick="copyToClipboard('+201099492414', this)">
+              <div class="contact-icon">📞</div>
+              <div class="contact-info">
+                <span class="contact-label">Phone</span>
+                <span class="contact-value">+20 109 949 2414</span>
+              </div>
+              <span class="copy-hint">click to copy</span>
+            </div>
+            <a class="contact-item contact-link" href="https://www.linkedin.com/in/mostafaabdalshafy/" target="_blank" rel="noopener noreferrer">
+              <div class="contact-icon">in</div>
+              <div class="contact-info">
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">mostafaabdalshafy</span>
+              </div>
+              <span class="copy-hint">open profile &#8599;</span>
+            </a>
+            <a class="contact-item contact-link" href="https://github.com/mostafa00950" target="_blank" rel="noopener noreferrer">
+              <div class="contact-icon">&lt;/&gt;</div>
+              <div class="contact-info">
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">mostafa00950</span>
+              </div>
+              <span class="copy-hint">open profile &#8599;</span>
+            </a>
           </div>
-          <span class="copy-hint">click to copy</span>
         </div>
-        <div class="contact-item" onclick="copyToClipboard('+201099492414', this)">
-          <div class="contact-icon">📞</div>
-          <div class="contact-info">
-            <span class="contact-label">Phone</span>
-            <span class="contact-value">+20 109 949 2414</span>
+        <!-- Replace YOUR_FORM_ID with the endpoint ID from your Formspree form. -->
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xbglvbpq" method="POST">
+          <div class="form-field">
+            <label for="contact-name">Full Name</label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" required>
           </div>
-          <span class="copy-hint">click to copy</span>
-        </div>
-        <a class="contact-item contact-link" href="https://www.linkedin.com/in/mostafaabdalshafy/" target="_blank" rel="noopener noreferrer">
-          <div class="contact-icon">in</div>
-          <div class="contact-info">
-            <span class="contact-label">LinkedIn</span>
-            <span class="contact-value">mostafaabdalshafy</span>
+          <div class="form-field">
+            <label for="contact-email">Email</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" required>
           </div>
-          <span class="copy-hint">open profile &#8599;</span>
-        </a>
-        <a class="contact-item contact-link" href="https://github.com/mostafa00950" target="_blank" rel="noopener noreferrer">
-          <div class="contact-icon">&lt;/&gt;</div>
-          <div class="contact-info">
-            <span class="contact-label">GitHub</span>
-            <span class="contact-value">mostafa00950</span>
+          <div class="form-field">
+            <label for="contact-type">Contact Type</label>
+            <select id="contact-type" name="contact_type" required>
+              <option value="" selected disabled>Select a contact type</option>
+              <option>General Inquiry</option>
+              <option>Service Inquiry</option>
+              <option>Pentesting Request</option>
+              <option>Collaboration</option>
+              <option>Other</option>
+            </select>
           </div>
-          <span class="copy-hint">open profile &#8599;</span>
-        </a>
+          <div class="form-field">
+            <label for="contact-subject">Subject</label>
+            <input id="contact-subject" name="subject" type="text" required>
+          </div>
+          <div class="form-field form-field-wide">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="4" required></textarea>
+          </div>
+          <fieldset id="pentest-fields" class="pentest-fields form-field-wide" disabled hidden>
+            <legend>Pentest Request Details</legend>
+            <div class="pentest-field-grid">
+              <div class="form-field">
+                <label for="target-url">Target URL / Domain</label>
+                <input id="target-url" name="target_url" type="text" autocomplete="url" required>
+              </div>
+              <div class="form-field">
+                <label for="application-type">Application Type</label>
+                <input id="application-type" name="application_or_api" type="text" required>
+              </div>
+              <div class="form-field">
+                <label for="testing-scope">Testing Scope</label>
+                <textarea id="testing-scope" name="testing_scope" rows="3" required></textarea>
+              </div>
+              <div class="form-field">
+                <label for="testing-environment">Testing Environment</label>
+                <select id="testing-environment" name="testing_environment" required>
+                  <option value="" selected disabled>Select environment</option>
+                  <option>Production</option>
+                  <option>Staging</option>
+                  <option>Development</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="preferred-date">Preferred Testing Date</label>
+                <input id="preferred-date" name="preferred_testing_date" type="date" required>
+              </div>
+              <div class="form-field">
+                <label for="additional-details">Additional Details</label>
+                <textarea id="additional-details" name="additional_details" rows="3"></textarea>
+              </div>
+              <label class="authorization-check form-field-wide">
+                <input name="authorization_confirmed" type="checkbox" value="Confirmed" required>
+                <span>I confirm that I own or have explicit authorization to test this target.</span>
+              </label>
+            </div>
+          </fieldset>
+          <p id="form-status" class="form-status form-field-wide" role="status" aria-live="polite" hidden></p>
+          <button class="btn btn-primary form-submit" type="submit"><span class="btn-icon">&#9993;</span> <span class="form-submit-label">Send Message</span></button>
+        </form>
       </div>
       <p class="contact-note">// Available for freelance work and collaboration</p>
     </section>

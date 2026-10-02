@@ -646,6 +646,99 @@ body {
   max-width: 480px;
 }
 
+.service-card {
+  max-width: 820px; margin-inline: auto; padding: 24px 28px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; transition: var(--transition);
+}
+
+.services-section .section-header { text-align: center; }
+.services-section .section-line { margin-left: auto; margin-right: auto; }
+.service-card:hover { border-color: rgba(0,229,255,.3); }
+.service-card .card-title { margin-bottom: 8px; font-size: 23px; }
+.service-card .card-desc { color: var(--text); font-size: 15px; line-height: 1.65; margin-bottom: 18px; }
+
+.service-list {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 18px; list-style: none; margin: 0 0 20px;
+}
+
+.service-list li {
+  color: var(--text); font-size: 13px; line-height: 1.6;
+  padding-left: 15px; position: relative;
+}
+
+.service-list li::before {
+  content: '>'; position: absolute; left: 0;
+  color: var(--accent2); font: 11px var(--font-mono);
+}
+
+.service-note {
+  border-left: 2px solid var(--accent2); padding: 10px 12px;
+  color: var(--text); font: 12px/1.6 var(--font-mono);
+  background: rgba(0,255,136,.035); margin-bottom: 20px;
+}
+
+.service-request { display: inline-flex; }
+
+.contact-layout {
+  display: grid; grid-template-columns: minmax(240px, .85fr) minmax(0, 1.15fr);
+  align-items: start; gap: 26px;
+}
+
+.contact-layout > div { min-width: 0; }
+.contact-layout .contact-grid { max-width: none; }
+
+.contact-form {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px; min-width: 0; padding: 20px;
+  background: rgba(12, 21, 32, .78); border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.form-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.form-field-wide { grid-column: 1 / -1; }
+
+.form-field > label, .pentest-fields legend {
+  color: var(--text-muted); font: 10px var(--font-mono);
+  letter-spacing: .04em;
+}
+
+.form-field input, .form-field select, .form-field textarea {
+  width: 100%; min-width: 0; color: var(--text);
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 4px; padding: 10px 11px;
+  font: 12px/1.5 var(--font-body); transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-field select { color-scheme: dark; }
+.form-field textarea { resize: vertical; }
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(0,229,255,.1); }
+
+.pentest-fields {
+  display: grid; min-width: 0; margin: 2px 0 0; padding: 14px 0 0;
+  border: 0; border-top: 1px solid var(--border);
+}
+
+.pentest-fields[hidden] { display: none; }
+.pentest-fields legend { padding: 0 8px 0 0; color: var(--accent); }
+.pentest-field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+
+.authorization-check {
+  display: flex; flex-direction: row; align-items: flex-start; gap: 9px;
+  color: var(--text); font: 11px/1.6 var(--font-body); cursor: pointer;
+}
+
+.authorization-check input { width: 15px; height: 15px; flex: 0 0 15px; margin-top: 2px; accent-color: var(--accent2); }
+
+.form-submit { justify-self: start; }
+.form-submit:disabled { opacity: .65; cursor: wait; transform: none; }
+.form-status { grid-column: 1 / -1; margin: 0; padding: 10px 12px; border-left: 2px solid var(--accent2); background: rgba(0,255,136,.045); color: var(--text); font: 12px/1.6 var(--font-mono); }
+.form-status[hidden] { display: none; }
+.form-status.error { border-left-color: var(--danger); background: rgba(255,60,90,.06); }
+
+.services-section, .contact-section { scroll-margin-top: 88px; }
+
 .contact-item {
   display: flex; align-items: center; gap: 16px;
   background: var(--surface); border: 1px solid var(--border);
@@ -710,6 +803,7 @@ body {
   .hero-visual { height: 460px; min-height: 0; }
   .hero-copy { order: 1; }.hero-visual { order: 0; }
   .hero-specialties span:hover { transform: translateY(-2px); }
+  .service-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 768px) {
@@ -753,6 +847,15 @@ body {
   .modal-panel { padding: 28px 20px; }
   .modal-columns { grid-template-columns: 1fr; gap: 18px; }
   .certifications-grid { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .service-card { padding: 18px; }
+  .service-card .card-title { font-size: 21px; }
+  .service-list, .contact-form, .pentest-field-grid { grid-template-columns: 1fr; }
+  .contact-form { padding: 16px; }
+  .form-field-wide { grid-column: auto; }
 }
 
 @media (hover: none), (max-width: 768px) {

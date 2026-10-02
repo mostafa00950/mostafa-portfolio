@@ -185,6 +185,85 @@ sections.forEach(s => navObserver.observe(s));
 })();
 
 
+// ── 8. CONTACT FORM ───────────────────────────────────────
+(function initContactForm() {
+  const form = document.getElementById('contact-form');
+  const contactType = document.getElementById('contact-type');
+  const pentestFields = document.getElementById('pentest-fields');
+  const status = document.getElementById('form-status');
+  const submitButton = form && form.querySelector('[type="submit"]');
+  const submitLabel = submitButton && submitButton.querySelector('.form-submit-label');
+  if (!form || !contactType || !pentestFields || !status || !submitButton || !submitLabel) return;
+
+  const authorization = pentestFields.querySelector('[name="authorization_confirmed"]');
+  let isSubmitting = false;
+
+  function showStatus(message, isError = false) {
+    status.textContent = message;
+    status.classList.toggle('error', isError);
+    status.hidden = false;
+  }
+
+  function updatePentestFields() {
+    const isPentestRequest = contactType.value === 'Pentesting Request';
+    pentestFields.hidden = !isPentestRequest;
+    pentestFields.disabled = !isPentestRequest;
+    pentestFields.setAttribute('aria-hidden', String(!isPentestRequest));
+    if (!isPentestRequest) authorization.checked = false;
+  }
+
+  contactType.addEventListener('change', updatePentestFields);
+  document.querySelectorAll('[data-pentest-request]').forEach(button => {
+    button.addEventListener('click', () => {
+      contactType.value = 'Pentesting Request';
+      contactType.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+  });
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (isSubmitting) return;
+
+    if (contactType.value === 'Pentesting Request' && !authorization.checked) {
+      showStatus('Confirm that you are authorized to test this target before submitting.', true);
+      authorization.focus();
+      return;
+    }
+
+    if (form.action.endsWith('/YOUR_FORM_ID')) {
+      showStatus('Formspree is not configured yet. Add your Form ID to the form action in index.html.', true);
+      return;
+    }
+
+    isSubmitting = true;
+    submitButton.disabled = true;
+    submitLabel.textContent = 'Sending...';
+    status.hidden = true;
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.ok === false) throw new Error('Form submission failed.');
+
+      form.reset();
+      updatePentestFields();
+      showStatus('Message sent successfully. Thank you for getting in touch.');
+    } catch {
+      showStatus('Your message could not be sent. Please check your connection and try again.', true);
+    } finally {
+      isSubmitting = false;
+      submitButton.disabled = false;
+      submitLabel.textContent = 'Send Message';
+    }
+  });
+
+  updatePentestFields();
+})();
+
+
 // ── 8. COPY TO CLIPBOARD ──────────────────────────────────
 function copyToClipboard(text, el) {
   navigator.clipboard.writeText(text).then(() => {
